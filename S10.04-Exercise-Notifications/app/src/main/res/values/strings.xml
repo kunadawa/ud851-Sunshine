@@ -228,4 +228,7 @@
         Low:<xliff:g id="low">%3$s</xliff:g>
     </string>
 
+    <string name="weather_notification_title">Weather updated</string>
+    <string name="weather_notification_content">Weather updated. Please check it out</string>
+
 </resources>
