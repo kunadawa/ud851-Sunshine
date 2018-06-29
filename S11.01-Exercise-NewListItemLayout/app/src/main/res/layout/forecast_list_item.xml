@@ -32,7 +32,7 @@
         android:id="@+id/imageViewDayWeatherIcon"
         android:contentDescription="@string/imageViewWeatherIcon_content_description"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
         />
     <TextView
         android:layout_marginLeft="10dp"
@@ -42,7 +42,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toRightOf="@id/imageViewDayWeatherIcon"
         app:layout_constraintRight_toLeftOf="@id/textViewDayHigh"
-        tools:text="@string/sample_weather_data"/>
+        tools:text="@string/sample_weather_data"
+        app:layout_constraintBottom_toTopOf="@id/guideline"/>
 
     <TextView
         android:id="@+id/textViewDayHigh"
@@ -53,7 +54,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintLeft_toRightOf="@id/tv_weather_data"
         app:layout_constraintRight_toLeftOf="@id/textViewDayLow"
-        tools:text="@string/sample_day_high" />
+        tools:text="@string/sample_day_high"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"/>
 
     <TextView
         android:id="@+id/textViewDayLow"
@@ -64,18 +66,14 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintLeft_toRightOf="@id/textViewDayHigh"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
         tools:text="@string/sample_day_low" />
 
-    <!-- This View serves as a visual divider between list items -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:background="#dadada"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/tv_weather_data"
-        />
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.0" />
 
 </android.support.constraint.ConstraintLayout>
