@@ -14,21 +14,57 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<!-- TODO (2) Remove the old layout -->
-<!-- TODO (3) Use ConstraintLayout to create the new list item layout -->
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- DO (2) Remove the old layout -->
+<!-- DO (3) Use ConstraintLayout to create the new list item layout -->
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp">
 
     <!-- This TextView holds the weather data for one particular day in the forecast -->
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageViewDayWeatherIcon"
+        android:contentDescription="@string/imageViewWeatherIcon_content_description"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="parent"
+        />
     <TextView
+        android:layout_marginLeft="10dp"
         android:id="@+id/tv_weather_data"
         style="@style/TextAppearance.AppCompat.Large"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/imageViewDayWeatherIcon"
+        app:layout_constraintRight_toLeftOf="@id/textViewDayHigh"
+        tools:text="@string/sample_weather_data"/>
+
+    <TextView
+        android:id="@+id/textViewDayHigh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintLeft_toRightOf="@id/tv_weather_data"
+        app:layout_constraintRight_toLeftOf="@id/textViewDayLow"
+        tools:text="@string/sample_day_high" />
+
+    <TextView
+        android:id="@+id/textViewDayLow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintLeft_toRightOf="@id/textViewDayHigh"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="@string/sample_day_low" />
 
     <!-- This View serves as a visual divider between list items -->
     <View
@@ -36,6 +72,10 @@
         android:layout_height="1dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:background="#dadada"/>
+        android:background="#dadada"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_weather_data"
+        />
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

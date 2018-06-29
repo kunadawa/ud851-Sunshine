@@ -243,5 +243,9 @@
         High:<xliff:g id="high">%2$s</xliff:g>
         Low:<xliff:g id="low">%3$s</xliff:g>
     </string>
+    <string name="imageViewWeatherIcon_content_description">Icon for this day\'s weather</string>
+    <string name="sample_weather_data">Today, 29 June Overcast likely manyunyu and radi</string>
+    <string name="sample_day_high">30</string>
+    <string name="sample_day_low">12</string>
 
 </resources>
