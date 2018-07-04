@@ -25,4 +25,8 @@
         <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
     </style>
 
+    <style name="detail_label">
+        <item name="android:textColor">@color/detail_accent_label</item>
+    </style>
+
 </resources>
